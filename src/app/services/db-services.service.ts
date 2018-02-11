@@ -34,8 +34,7 @@ export class DbServicesService {
         })
       });
    }
-  
-  
+    
    getItemOnce(item:Item[]) {
     this.db.database.ref('/items').once('value')
     .then(function(snapshot){

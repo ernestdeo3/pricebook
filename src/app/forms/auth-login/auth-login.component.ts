@@ -28,7 +28,6 @@ export class AuthLoginComponent implements OnInit {
       }
     });
   }
-
   signup() {
     this.authService.signup(this.email, this.password);
     this.email = this.password = '';

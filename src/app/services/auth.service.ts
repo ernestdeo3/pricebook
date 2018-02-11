@@ -26,6 +26,7 @@ export class AuthService {
   getUserState(){
     return this.user;
   }
+  
   signup(email: string, password: string) {
     this.firebaseAuth
       .auth

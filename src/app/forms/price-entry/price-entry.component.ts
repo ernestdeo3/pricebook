@@ -150,7 +150,7 @@ export class PriceEntryComponent implements OnInit {
     let fitems = this.orderForm.get('items') as FormArray;
     while (fitems.length !== 0) {
         fitems.removeAt(0);
-        console.log('clear');
+      
     }
     fitems = new FormArray([]);
     this.orderForm.reset();

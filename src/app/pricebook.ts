@@ -11,7 +11,6 @@ export class PriceSet {
     name: string;
     item:ItemPrice[]=[];
 }
-
 export class ItemPrice {
     name: string;
     priceA:number;

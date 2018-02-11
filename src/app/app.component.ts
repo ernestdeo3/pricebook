@@ -33,8 +33,7 @@ export class AppComponent {
         this.isAuthed = false;
         router.navigate(['/login']);
       }
-    });
-   
+    });   
   }
 
   isLogon: boolean;
