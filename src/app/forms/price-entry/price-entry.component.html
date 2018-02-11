@@ -1,0 +1,67 @@
+<div class="entryfrom">
+  <form  [formGroup]="searhForm" novalidate>
+  <div class="form-row">
+    <div class="col">
+      <input type="date" class="form-control" formControlName="pricedate" placeholder="Date">
+    </div>
+    <div class="col">
+        <select class="custom-select form-control" formControlName="pricegrp" placeholder="Group">
+            <option value="A" >SET A</option>
+            <option value="B">SET B</option>
+            <option value="C">SET C</option>
+          </select>
+    </div>
+    <div class="col">
+      <button type="button" (click)="OnLoadPrice()" class="btn btn-success col">LOAD</button>
+    </div>
+  </div>
+  </form>
+  <hr>
+  <div [formGroup]="orderForm">
+    <div class="form-row">
+      <div class="col btn-primary">
+        ITEM CODE
+      </div>
+      <div class="col btn-primary">
+        DESC
+      </div>
+      <div class="col btn-primary">
+        PRICE A
+      </div>
+      <div class="col btn-primary">
+        PRRICE B
+      </div>
+    </div>
+    <div formArrayName="items" *ngFor="let item of formData.controls; let i = index;">
+      <div [formGroupName]="i">
+        <div class="form-row">
+          <div class="col">
+            <input class="form-control-plaintext" formControlName="name" placeholder="Item name" readonly>
+          </div>
+          <div class="col">
+            <input class="form-control-plaintext" formControlName="description" placeholder="Item description" readonly>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" formControlName="priceA" placeholder="Item price">
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" formControlName="priceB" placeholder="Item price">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+      <div class="col">
+          <button type="button" class="btn btn-success btn-block"
+          (click)="OnSave()" >SAVE</button>
+        </div>
+        <div class="col">
+            <button type="button" 
+             class="btn btn-danger btn-block"
+             (click)="OnCancel()">CANCEL</button>
+          </div>
+  </div>
+</div>
+
